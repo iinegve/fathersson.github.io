@@ -1,3 +1,9 @@
+---
+layout: post
+title: "HBase's Compaction Mechanism"
+date: 2014-07-11
+---
+
 #### HBase's Compaction Mechanism
 
 Here is the use-case we've faced once developing storage platform, which gives a lot of insights of how HBase’s compaction mechanism works and can be twicked. Thorough description of Minor compaction properties can be found [on the official site](http://hbase.apache.org/book/regions.arch.html#compaction)
@@ -13,7 +19,7 @@ It is useful for us to utilize bulkload import instead of bother ourselves with 
 
 By default, having major compaction mechanism turned on, once in a while all HFiles we have in a region are compacted into a huge one HFile. Since it requires to have quick access to last week of HFiles, then it’s probably a good idea to have several HFiles somehow distributed in terms of size. For example we might have something like this: the older file, the bigger size.
 
-![pic 1]({{ site.url }}/assets/2014-07-11-hbase-compaction.png)
+![pic 1]({{ site.url }}/assets/2014-07-11-hbase-compaction-1.png)
 Size of HFiles in days. There are 6 files in picture of different size
 
 Meaning is that for given 3 months (or 12 weeks) of data we’d have HFiles in different sizes. Oldest one would contains 6 weeks of data, another one would have 3 weeks, etc, until couple of newest would contains only couple of days or even one day of data. Such a distribution would help us utilize HBase’s intrinsic time-range filter mechanism, which could significantly reduce number of HFiles for reading.
@@ -82,3 +88,4 @@ Comparing different set of parameters we choose the first one. It gave us the be
 
 Here is the result of Minor compaction working against the data.
 
+... to be continued ...
