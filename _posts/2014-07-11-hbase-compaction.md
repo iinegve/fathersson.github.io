@@ -97,7 +97,4 @@ Comparing different set of parameters we choose the first one. It gave us the be
 
 Here is the result of Minor compaction working against the data.
 
-One more something.
-One more something.
-
 ... to be continued ...
