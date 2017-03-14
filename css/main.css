@@ -40,6 +40,11 @@ div.post {
     padding: 0em;
 }
 
+code {
+    font-size: 1.2em;
+    line-height: 1em;
+}
+
 div.post img {
     display: block;
     margin: 0 auto;
