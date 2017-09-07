@@ -2,7 +2,9 @@
 layout: default
 ---
 <div class="posts">
-  {% for post in site.posts %}
-    {{ post.date | date_to_string }} -- <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a><br/>
-  {% endfor %}
+    {% for post in site.posts %}
+    {{ post.date | date_to_string }} -- <a href="{{ post.url }}" title="{{ post.title }}"> {{ post.title }}</a><br/>
+    <div style="margin-left:2em;" align="justify">{{ post.excerpt | remove: '<p>' | remove: '</p>' }}</div>
+    <br/>
+    {% endfor %}
 </div>

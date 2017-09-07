@@ -1,0 +1,7 @@
+@startuml
+
+[Core] <-u- [Spring]
+[Core] <- [HttpClient]
+[Core] <-- [Hibernate]
+
+@enduml
